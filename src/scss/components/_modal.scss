@@ -1,0 +1,209 @@
+.custom-checkbox {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 20px;
+  padding-left: 32px;
+
+  &:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  &.colors {
+    display: none;
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+
+    &:checked~.custom-checkbox__label::after {
+      opacity: 1;
+    }
+  }
+  
+  &__label {
+    &:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #FFFFFF;
+      border: 1px solid #999999;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url('../img/checkbox.svg') no-repeat center center var(--primary-color);
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #666666;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:focus {
+      color: var(--primary-color);
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: var(--primary-light-color);
+      }
+
+      &:active {
+        color: var(--primary-color);
+      }
+    }
+
+    & a {
+      color: var(--primary-color);
+    }
+  }
+}
+.modal {
+  position: fixed;
+}
+// buy in one click
+
+.oneclick-buy {
+  top: 19%;
+  left: calc((100% - 624px) / 2);
+  padding: 26px 30px 30px;
+  width: 624px;
+  min-height: 421px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transition: all .1s ease-in-out;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 9;
+  }
+
+  @include small-tablet {
+    left: calc((100% - 450px) / 2);
+    width: 450px;
+  }
+  @include mobile {
+    top: 23%;
+    left: 3.5%;
+    padding: 30px 16px;
+    width: calc(100% - 24px);
+  }
+
+  &__heading {
+    margin-bottom: 8px;
+    font-size: 32px;
+    color: var(--text-color);
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    width: 65%;
+    font-size: 14px;
+    line-height: 19px;
+    @include mobile {
+      margin-bottom: 16px;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 28px;
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__input {
+    padding: 7px 18px;
+    width: 100%;
+    height: 54px;
+    font-size: 16px;
+    line-height: 2;
+    color: var(--grey-color);
+    background-color: var(--grey-light-color);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      background-color: var(--pink-light-color);
+      border-color: var(--primary-color);
+    }
+
+    @include for-desktop {
+      &:hover {
+        background-color: var(--md-grey-color);
+      }
+
+      &:active {
+        background-color: var(--grey-light-color);
+        border-color: var(--green-input-color);
+      }
+    }
+  }
+
+  &__submit {
+    margin-bottom: 12px;
+    width: 159px;
+  }
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: -17px;
+  left: 19px;
+  width: 400px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--red-input-color) !important;
+}
+
+.just-validate-success-field {
+  background-color: var(--grey-light-color);
+  border: 1px solid var(--green-input-color);
+}
