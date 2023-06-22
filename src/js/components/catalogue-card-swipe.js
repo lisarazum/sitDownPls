@@ -1,15 +1,32 @@
 import Swiper, { Grid, Pagination } from 'swiper';
 Swiper.use([Grid, Pagination]);
+
 const catalogueCouchBlock = new Swiper('.catalogue-couch__block', {
   allowTouchMove: true,
   loop: false,
-  slidesPerView: 3,
-  slidesPerGroup : 1,
+  slidesPerView: 2,
   grid: {
-    fill: 'column',
+    fill: 'row',
     rows: 3,
   },
+  slidesPerGroup : 3,
+  spaceBetween: 16,
 
+
+  breakpoints: {
+    568: {
+      spaceBetween: 32,
+    },
+    769: {
+      slidesPerView: 3,
+      grid: {
+        rows: 3,
+        fill: 'row',
+      },
+      slidesPerGroup : 3,
+    }
+  },
+  
   pagination: {
     el: ".catalogue-couch__btns",
     clickable: true,
@@ -17,23 +34,4 @@ const catalogueCouchBlock = new Swiper('.catalogue-couch__block', {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   },
-
-  breakpoints: {
-    // 568: {
-    //   slidesPerView: 2,
-    //   slidesPerColumn: 2,
-    //   grid: {
-    //     fill: 'row',
-    //     rows: 3,
-    //   },
-    // },
-    769: {
-      slidesPerView: 3,
-      slidesPerGroup : 1,
-      grid: {
-        fill: 'column',
-        rows: 3,
-      },
-    }
-  }
 });

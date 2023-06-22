@@ -6,14 +6,14 @@
         <p class="paragraph contact__paragraph">
           Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
           <span class="tooltip">
-            <button class="btn-reset tooltip__btn" aria-describedby="tooltip"></button>
+            <button class="btn-reset tooltip__btn"></button>
             <span class="tooltip__txt" role="tooltip">
                 Реплицированные с зарубежных источников, исследования формируют глобальную сеть.
                 <span id="arrow" data-popper-arrow></span>
             </span>
           </span>
         </p>
-        <form class="contact-form" action="POST">
+        <form class="contact-form" action="#">
           <input type="text" name="subscribtion" style="display: none;">
           <label class="contact-form__label">
             <input class="input-reset contact-form__input" id="form-name" type="text" name="name" placeholder="Как вас зовут?" required>
@@ -26,7 +26,7 @@
           </label>
           <button class="btn-reset contact-form__btn purple-btn" type="submit">Отправить</button>
           <label class="checkbox contact-form__checkbox">
-            <input class="checkbox__field" id="form-checkbox" type="checkbox" checked required>
+            <input class="checkbox__field contact-form__checkbox-input" id="form-checkbox" type="checkbox" checked required>
             <span class="checkbox__text">Принимаю <a class="checkbox__link" href="#">пользовательское соглашение</a></span>
           </label>
         </form>
@@ -35,3 +35,15 @@
     </div>
   </div>
 </section>
+
+<div class="modal contact-modal">
+  <button class="close-btn contact-modal__close">
+    <svg class="contact-modal__close-svg">
+      <use xlink:href="img/sprite.svg#exit"></use>
+    </svg>
+  </button>
+  <svg class="contact-modal__elephant-svg">
+    <use xlink:href="img/sprite.svg#elephant"></use>
+  </svg>
+  <h2 class="heading">Теперь вы подписаны на наши новости!</h2>
+</div>

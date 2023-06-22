@@ -4,23 +4,19 @@
 @include('partials/head.html')
 
 <body class="page__body">
-  <div class="site-container">
     @include('partials/header.html')
     <main class="main">
       @include('partials/hero.html')
       @include('partials/special.html')
-      <div class="container">
-        @include('partials/catalogue.html')
-      </div>
+      @include('partials/catalogue.html')
       @include('partials/banner.html')
       @include('partials/cathegories.html')
       @include('partials/blog.html')
       @include('partials/contact.html')
     </main>
+    <div class="overlay" data-menu-overlay></div>
 
     @include('partials/footer.html')
-  </div>
-  <div class="overlay" data-menu-overlay></div>
 </body>
 
 </html>

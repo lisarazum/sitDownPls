@@ -1,5 +1,8 @@
 .add {
-  height: 390px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  height: 360px;
   width: 100%;
 
   @include desktop {
@@ -21,12 +24,13 @@
   &__title {
     font-family: 'Playfair Display';
     font-weight: 900;
-    font-size: 24px;
+    font-size: 27px;
     line-height: 32px;
   }
 
   &__paragraph {
-    width: 100%;
+    margin-bottom: 13px;
+    width: 77%;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;

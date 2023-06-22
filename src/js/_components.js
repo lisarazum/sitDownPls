@@ -4,5 +4,7 @@ import './components/burger';
 import './components/hero-swiper';
 import './components/special-swiper';
 import './components/blog-swiper';
+import './components/catalogue';
 import './components/tooltip';
+import './components/cart-add';
 import './components/form-validate';

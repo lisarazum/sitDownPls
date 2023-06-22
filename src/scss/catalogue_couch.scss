@@ -64,27 +64,10 @@
   &__block {
     padding-bottom: 60px;
     width: 100%;
-    height: 1324px;
-
-    // &  > .catalogue-couch__wrapper {
-    //   -ms-flex-wrap: wrap;
-    //   flex-wrap: wrap;
-    //   overflow: hidden;
-    // }
   }
 
   &__wrapper {
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 40px;
-
-  //   @include big-desktop {
-  //     padding-bottom: 0;
-  //   }
-
-  //   @include mobile {
-  //     justify-content: flex-start;
-  //   }
+    padding-bottom: 11px;
   }
 
   &__heading {
@@ -105,29 +88,68 @@
   }
 
   &__card {
-    // width: 13.5% !important;
-    height: 420px !important;
     display: flex;
-    // margin-top: 0;
+    min-height: 336px;
 
-    // &:nth-child(n+9) {
-    //   display: flex;
-    // }
+    @include mobile {
+      min-height: 226px;
+    }
 
-    // &:nth-child(n+7) {
-    //   display: flex;
-    // }
+    & .card__picture {
+      margin-bottom: unset;
+    }
 
-    // @include big-desktop {
-    //   margin-right: 1%;
-    //   margin-bottom: 30px;
-    // }
+    & .card__img {
+      @include desktop {
+        max-height: 125px;
+      }
+    }
 
-    // @include mobile {
-    //   margin-right: 1%;
-    //   width: 15.5% !important;
-    //   height: 278px;
-    // }
+    & .card__descr {
+      height: unset;
+    }
+
+    & .product-link {
+      margin-bottom: 22px;
+      @include tablet {
+        margin-bottom: auto;
+      }
+      & .card__title {
+        height: 62px;
+        -webkit-line-clamp: 2; 
+        display: -webkit-box; 
+        -webkit-box-orient: vertical; 
+        overflow: hidden;
+
+        @include desktop {
+          height: unset;
+          max-height: 93px;
+          -webkit-line-clamp: 3; 
+        }
+        @include tablet {
+          height: 93px;
+        }
+        @include small-tablet {
+          height: 80px;
+        }
+        @include mobile {
+          height: 77px;
+        }
+      }
+    }
+
+    & .card__btn {
+      max-width: 61px;
+
+      @include desktop {
+        max-width: 95px;
+      }
+      @include mobile {
+        padding: 10px 0;
+        max-width: unset;
+        width: 111px;
+      }
+    }
   }
 
   // btns

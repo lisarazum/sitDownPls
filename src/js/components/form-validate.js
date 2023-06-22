@@ -56,8 +56,24 @@ const rules1 = [
   }
 ];
 
-const afterForm = () => {
-  console.log('Произошла отправка');
+const afterSend = () => {
+  const contactFormModal = document.querySelector('.contact-modal')
+  const contactFormModalClose = document.querySelector('.contact-modal__close')
+  const overlay = document.querySelector('.overlay')
+  
+  contactFormModal.classList.add('is-active')
+  overlay.classList.add('is-active')
+  contactFormModalClose.addEventListener('click', function() {
+    contactFormModal.classList.remove('is-active')
+    overlay.classList.remove('is-active')
+  })
+
+  if (contactFormModal.classList.contains('is-active')) {
+    setTimeout(() => {
+      contactFormModal.classList.remove('is-active')
+      overlay.classList.remove('is-active')
+    }, 3000)
+  }
 };
 
-validateForms('.contact-form', rules1, afterForm);
+validateForms('.contact-form', rules1, afterSend);

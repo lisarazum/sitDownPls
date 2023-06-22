@@ -35,70 +35,72 @@
     }
   }
 
-  &__main-img {
+  &__main-img__slider {
     margin-bottom: 12px;
+    height: 254px;
+
+    @include mobile {
+      height: 116px;
+    }
+
+    & .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      & img {
+        max-height: 254px;
+        object-fit: contain;
+
+        @include mobile {
+          max-height: 116px;
+        }
+      }
+    }
   }
 
   &__mini {
     &-images {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 25px;
-      background-color: var(--grey-light-color);
+      &__back {
+        padding: 10px 25px;
+        height: 81px;
+        background-color: var(--grey-light-color);
 
-      &-overflow {
-        @include desktop {
-          overflow-x: scroll;
-        }
         @include tablet {
           position: absolute;
           top: 106%;
-          overflow-x: unset;
-          overflow-y: scroll;
+          padding: 25px;
+          width: 187px;
+          height: 349px;
         }
         @include mobile {
           position: unset;
-          overflow-x: scroll;
-          overflow-y: unset;
+          padding: 10px 0 25px 10px;
+          width: 100%;
+          height: 81px;
         }
       }
 
-      @include desktop {
-        padding: 10px 10px;
-        width: 115%;
-      }
-
+      height: 61px;
       @include tablet {
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 10px;
-        width: 187px;
-        height: 349px;
+        height: 299px;
       }
-
       @include mobile {
-        flex-direction: row;
-        padding: 11px 10px;
-        width: 500px;
-        height: 100%;
+        height: 61px;
       }
     }
-
     &-img {
-      &:not(:last-child) {
-        @include desktop {
-          margin-right: 39px;
-        }
-        @include tablet {
-          margin-right: 0;
-          margin-bottom: 15px;
-        }
-        @include mobile {
-          margin-right: 38px;
-          margin-bottom: 0;
-        }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      & img {
+        max-height: 61px;
+        object-fit: contain;
       }
-    }
+    } 
   }
 
   &__main-info {
@@ -262,29 +264,32 @@
       @include mobile {
         margin-top: 30px;
       }
+
+      & div {
+        width: 39%;
+  
+        @include desktop {
+          width: 47%;
+        }
+        @include tablet {
+          width: 39%;
+        }
+        @include mobile {
+          width: 47%;
+        }
+  
+        &:not(:last-child) {
+          margin-right: 29px;
+  
+          @include mobile {
+            margin-right: 17px;
+          }
+        }
+      }
     }
 
     &-img {
-      width: 39%;
       object-fit: contain;
-
-      @include desktop {
-        width: 47%;
-      }
-      @include tablet {
-        width: 39%;
-      }
-      @include mobile {
-        width: 47%;
-      }
-
-      &:not(:last-child) {
-        margin-right: 29px;
-
-        @include mobile {
-          margin-right: 17px;
-        }
-      }
     }
   }
 

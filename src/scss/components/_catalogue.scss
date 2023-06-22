@@ -38,18 +38,6 @@
     }
   }
 
-  &__card.main-card {
-    &:nth-child(n + 9) {
-      display: none;
-    }
-
-    @include desktop {
-      &:nth-child(n + 7) {
-        display: none;
-      }
-    }
-  }
-
   &__more {
     display: flex;
     margin-right: auto;

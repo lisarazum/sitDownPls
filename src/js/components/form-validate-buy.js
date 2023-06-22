@@ -44,15 +44,27 @@ const rules2 = [
   }
 ];
 
-const afterForm = () => {
-  console.log('Произошла отправка');
+const afterSend = () => {
+  const buyModal = document.querySelector('.oneclick-buy')
+  const feedbackFormModal = document.querySelector('.feedback-modal')
+  const feedbackFormModalClose = document.querySelector('.feedback-modal__close')
+  const overlay = document.querySelector('.overlay')
+
+  buyModal.classList.remove('is-active')
+  
+  feedbackFormModal.classList.add('is-active')
+  overlay.classList.add('is-active')
+  feedbackFormModalClose.addEventListener('click', function() {
+    feedbackFormModal.classList.remove('is-active')
+    overlay.classList.remove('is-active')
+  })
+
+  if (feedbackFormModal.classList.contains('is-active')) {
+    setTimeout(() => {
+      feedbackFormModal.classList.remove('is-active')
+      overlay.classList.remove('is-active')
+    }, 3000)
+  }
 };
 
-function closeModal() {
-  const onclickModal = document.querySelector('.oneclick-buy');
-
-  onclickModal.classList.remove('is-active')
-
-}
-
-validateForms('.oneclick-buy__form', rules2, closeModal);
+validateForms('.oneclick-buy__form', rules2, afterSend);
